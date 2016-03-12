@@ -1,6 +1,0 @@
-com\maiquan\aladdin_supplier\util\LogUtil.class
-com\maiquan\aladdin_supplier\domain\Supplier.class
-com\maiquan\aladdin_supplier\service\impl\SupplierServiceImpl.class
-com\maiquan\aladdin_supplier\Start.class
-com\maiquan\aladdin_supplier\mapper\SupplierMapper.class
-com\maiquan\aladdin_supplier\service\ISupplierService.class
