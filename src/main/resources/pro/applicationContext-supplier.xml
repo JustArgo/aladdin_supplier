@@ -19,13 +19,13 @@
 						http://www.springframework.org/schema/tx
 						http://www.springframework.org/schema/tx/spring-tx-3.0.xsd"> 
 		
-	<import resource="classpath:dubbo.xml"/>
+	<import resource="classpath:dubbo-supplier.xml"/>
 	
 	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">  
         <property name="locations">  
            <list>  
               <!-- 这里支持多种寻址方式：classpath和file -->
-              <value>classpath:db.properties</value>
+              <value>classpath:db-supplier.properties</value>
             </list> 
         </property>  
     </bean>  
