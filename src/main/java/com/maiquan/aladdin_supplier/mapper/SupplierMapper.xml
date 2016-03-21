@@ -270,4 +270,13 @@
       status = #{status,jdbcType=VARCHAR}
     where ID = #{ID,jdbcType=INTEGER}
   </update>
+  <select id="selectSupplierListByIDs" resultMap="BaseResultMap">
+  	 select 
+    <include refid="Base_Column_List" />
+    from t_supplier
+    where ID in
+    <foreach collection="array" open="(" separator="," close=")" item="id">
+    	#{id,jdbcType=INTEGER}
+    </foreach>
+  </select>
 </mapper>

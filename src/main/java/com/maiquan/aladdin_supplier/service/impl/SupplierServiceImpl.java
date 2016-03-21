@@ -3,6 +3,7 @@ package com.maiquan.aladdin_supplier.service.impl;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Date;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,18 @@ public class SupplierServiceImpl implements ISupplierService{
 		LogUtil.logOutput("供应商微服务", "getSupplier", requestID, supplier);
 		
 		return supplier;
+	}
+
+	@Override
+	public List<Supplier> getSupplierListByIDs(String requestID, Integer... ids) {
+
+		LogUtil.logInput("供应商微服务", "getSupplierListByIDs", requestID, ids);
+		
+		List<Supplier> supplierList = supplierMapper.selectSupplierListByIDs(ids);
+		
+		LogUtil.logOutput("供应商微服务", "getSupplierListByIDs", requestID, supplierList);
+		
+		return supplierList;
 	}
 
 }
