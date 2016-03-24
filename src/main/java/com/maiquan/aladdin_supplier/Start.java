@@ -12,7 +12,7 @@ public class Start
 		
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] { "applicationContext-supplier.xml" });
 		context.start();
-		System.out.println("供应商微服务启动 ");
+		System.out.println("供应商微服务启动");
 		while(true){
 			Thread.sleep(1000);
 		}
