@@ -1,2 +1,2 @@
-# aladdin_supplier
-供应商管理
+# aladdin_supplier_service
+供应商服务
