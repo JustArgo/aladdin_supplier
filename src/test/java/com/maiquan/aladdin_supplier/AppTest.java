@@ -1,38 +1,35 @@
 package com.maiquan.aladdin_supplier;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import java.util.UUID;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import com.maiquan.aladdin_supplier.service.ISupplierService;
 
 /**
  * Unit test for simple App.
  */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
-
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration("applicationContext-supplier.xml")
+public class AppTest {
+  
+	private ISupplierService supplierService;
+	
+	@Before
+	public void setUp(){
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext-supplier.xml");
+		supplierService = ctx.getBean(ISupplierService.class);
+		
+	}
+	
+	@Test
+	public void testGetSupplier(){
+		supplierService.getSupplier(2, UUID.randomUUID().toString().replace("-", ""));
+	}
+	
 }
